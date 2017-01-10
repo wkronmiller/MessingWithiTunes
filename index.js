@@ -16,7 +16,7 @@ function recommendSong(sortedLibTracks) {
     setTimeout(() => recommendSong(sortedLibTracks), RunTime + 500);
 }
 
-fs.readFile('/Users/wrkronmiller/Music/iTunes/iTunes Music Library.xml', (err, data) => {
+fs.readFile(`${process.env.HOME}/Music/iTunes/iTunes Music Library.xml`, (err, data) => {
     if(err) { throw err; }
     const list = plist.parse(String(data));
     const libraryTracks = list.Playlists['0']['Playlist Items'].map((track) => track['Track ID']).map(id => list.Tracks[id]);
