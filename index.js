@@ -1,13 +1,19 @@
-const fs = require('fs')
-const plist = require('plist')
+const fs = require('fs');
+const plist = require('plist');
+const itunescontrol = require('itunescontrol');
 
 function recommendSong(sortedLibTracks) {
     const maxPlayCount = sortedLibTracks[0].PlayCount;
     console.log('max count', maxPlayCount);
     const normedCounts = sortedLibTracks
-        .map(({Name, Artist, PlayCount}) => ({Name, Artist, PlayCount, P: (1 - (PlayCount / maxPlayCount))}))
+        .map(track => {
+            track.P = (1 - (track.PlayCount / maxPlayCount));
+            return track;
+        })
         .filter(({P}) => P > Math.random())
-    console.log(normedCounts[Math.floor(Math.random() * normedCounts.length)]);
+    const {Id, Name, Artist}  = normedCounts[Math.floor(Math.random() * normedCounts.length)];
+    console.log(`Playing ${Name} by ${Artist}`);
+    itunescontrol.play(Id);
 }
 
 fs.readFile('/Users/wrkronmiller/Music/iTunes/iTunes Music Library.xml', (err, data) => {
@@ -15,7 +21,7 @@ fs.readFile('/Users/wrkronmiller/Music/iTunes/iTunes Music Library.xml', (err, d
     const list = plist.parse(String(data));
     const libraryTracks = list.Playlists['0']['Playlist Items'].map((track) => track['Track ID']).map(id => list.Tracks[id]);
     const sortedLibTracks = libraryTracks
-        .map((track) => ({Name: track.Name, Artist: track.Artist, PlayCount: track['Play Count'] || 0}))
+        .map((track) => ({Id: track['Track ID'], Name: track.Name, Artist: track.Artist, PlayCount: track['Play Count'] || 0}))
         .sort((a,b) => a.PlayCount - b.PlayCount)
         .reverse();
     //fs.writeFile('/tmp/librarySongs.json', JSON.stringify(sortedLibTracks, null, 4), (err) => {if(err) throw err});
