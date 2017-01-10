@@ -9,6 +9,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "itunescontrol": "^1.0.6",
     "plist": "^2.0.1"
   }
 }
