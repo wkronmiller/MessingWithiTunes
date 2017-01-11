@@ -16,6 +16,15 @@ function recommendSong(sortedLibTracks) {
     setTimeout(() => recommendSong(sortedLibTracks), RunTime + 500);
 }
 
+function getTotalPlayTime(sortedLibTracks) {
+    const msInHr = 1000 * 60 * 60;
+    const totalHrs = sortedLibTracks
+        .map(({PlayCount, RunTime}) => (PlayCount * RunTime) / msInHr)
+        .filter(normedCount => isNaN(normedCount) === false)
+        .reduce((sum, normedCount) => sum + normedCount);
+    console.log('Your total listening time', totalHrs, 'hours');
+}
+
 fs.readFile(`${process.env.HOME}/Music/iTunes/iTunes Music Library.xml`, (err, data) => {
     if(err) { throw err; }
     const list = plist.parse(String(data));
@@ -31,5 +40,6 @@ fs.readFile(`${process.env.HOME}/Music/iTunes/iTunes Music Library.xml`, (err, d
         .sort((a,b) => a.PlayCount - b.PlayCount)
         .reverse();
     //fs.writeFile('/tmp/librarySongs.json', JSON.stringify(sortedLibTracks, null, 4), (err) => {if(err) throw err});
+    getTotalPlayTime(sortedLibTracks);
     recommendSong(sortedLibTracks);
 });
