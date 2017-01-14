@@ -6,3 +6,8 @@
 4. Run `npm install && npm start`
 5. ...
 6. profit
+
+# Notes
+
+- No ui yet
+- Take a peek in `lib/server.js` for routes
