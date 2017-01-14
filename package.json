@@ -4,11 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-      "start": "node index.js"
+    "start": "node index.js"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "express": "^4.14.0",
+    "freeport": "^1.0.5",
     "itunescontrol": "^1.0.6",
     "plist": "^2.0.1"
   }
