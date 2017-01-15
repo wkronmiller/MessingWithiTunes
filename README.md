@@ -21,5 +21,4 @@ Song recommender for iTunes + MacOs that randomly selects a song based on how IN
 
 # Notes
 
-- No ui yet
-- Take a peek in `lib/server.js` for routes
+- Take a peek in `server/lib/server.js` for routes
