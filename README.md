@@ -2,6 +2,9 @@
 
 Song recommender for iTunes + MacOs that randomly selects a song based on how INfrequently you play it.
 
+
+[Screenshots](http://imgur.com/a/1xhMw)
+
 ## Reasons to Use
 
 - That one catchy tune you've been playing dozens of times consecutively is now just grating
@@ -10,12 +13,11 @@ Song recommender for iTunes + MacOs that randomly selects a song based on how IN
 
 # How to use
 
-1. Download this and follow these instructions <https://support.apple.com/en-us/HT201610>
-2. Install NodeJS
-3. Open a terminal inside this folder
-4. Run `npm install && npm start`
-5. ...
-6. profit
+1. Configure iTunes to share XML with other applications
+2. Fire up the nodejs server
+3. Open the electron app
+
+(Better instructions/packaging coming eventually)
 
 # Notes
 
