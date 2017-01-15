@@ -1,6 +1,6 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
+  "name": "shufflr-desktop-ui",
+  "productName": "iTunes Shufflr",
   "version": "0.10.0",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "main": "main.js",
@@ -28,8 +28,8 @@
     "cleanup": "mop -v"
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "iTunesShufflr",
+    "appId": "org.develar.ShufflrUi",
     "category": "public.app-category.tools",
     "dmg": {
       "contents": [
