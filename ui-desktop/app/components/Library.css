@@ -1,0 +1,74 @@
+.backButton {
+  margin-top: 1em;
+  position: fixed;
+}
+
+.loveHate {
+    display: inline;
+}
+
+.loveHate * {
+    margin-right: .5em;
+    color: #fff;
+    display: inline;
+}
+
+.libBody {
+    margin: 0px;
+    overflow-y: scroll;
+    height: 90vh;
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
+
+.libBody li {
+    padding-left: 0em;
+    padding: 5px;
+    overflow-x: hidden;
+    //overflow-y: scroll;
+    text-transform: uppercase;
+}
+
+.songList {
+    margin: 0px;
+    overflow-y: scroll;
+}
+
+.song {
+    text-transform: none !important;
+    white-space: nowrap !important;
+    margin-top: .5em;
+    margin-bottom: .5em;
+    display: inline;
+}
+
+.artist {}
+
+.playCount {
+    padding-bottom: 1em !important;
+}
+
+.btnGroup {
+  position: relative;
+  top: 500px;
+  width: 480px;
+  margin: 0 auto;
+}
+
+.btn {
+  font-size: 1.6rem;
+  font-weight: bold;
+  background-color: #fff;
+  border-radius: 50%;
+  margin: 10px;
+  width: 100px;
+  height: 100px;
+  opacity: .7;
+  cursor: pointer;
+  font-family: Arial, Helvetica, Helvetica Neue;
+}
+
+.btn:hover {
+  color: white;
+  background-color: rgba(0, 0, 0, 0.5);
+}

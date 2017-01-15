@@ -1,0 +1,44 @@
+/* http://paletton.com/#uid=63z0W0kv7s0uYzqwavsujpctOmU */
+@import "~font-awesome/css/font-awesome.css";
+
+body {
+  position: relative;
+  color: white;
+  height: 100vh;
+  background-color: #0E5390;
+  font-family: Helvetica;
+  overflow-y: hidden;
+}
+
+h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: bold;
+  letter-spacing: -.025em;
+  color: #ffffff;
+}
+
+p {
+  font-size: 24px;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+  padding: 1em;
+  text-transform: lowercase;
+}
+
+a {
+  padding: .25em;
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  //color: #DF8506;
+  text-decoration: none;
+  cursor: pointer;
+  border-color: white;
+  border-style: none none solid solid;
+}
